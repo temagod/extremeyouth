@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Extreme Youth — Монголын экстрем спортын community</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-top">
+    <div class="brand"><a href="index.html"><i class="fas fa-bolt"></i> Extreme Youth</a></div>
+
+    <nav class="main-nav" id="top">
+      <a href="index.html"><i class="fas fa-home"></i> Нүүр</a>
+      <a href="#categories"><i class="fas fa-layer-group"></i> Ангилал</a>
+      <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+      <a href="#tools"><i class="fas fa-helmet-safety"></i> Safety</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> Бидний тухай</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-container">
+        <input id="global-search" type="search" placeholder="Эвент, спорт, нийтлэл хайх." aria-label="search">
+        <button class="search-btn" aria-label="search button"><i class="fas fa-search"></i></button>
+      </div>
+      <button id="menu-toggle" class="icon-btn" aria-label="menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+
+  <div class="container hero">
+    <article class="hero-article">
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Extreme Youth Community">
+        <div class="overlay"></div>
+      </div>
+      <div class="hero-meta">
+        <span class="tag success">COMMUNITY</span>
+        <h1><a href="about.html">Extreme Youth: Drift • BMX • Skate • Scooter • Parkour</a></h1>
+        <p class="lead">Экстрим спортыг “эрсдэл” биш “соёл” болгох гэж ажиллана: дүрэмтэй, аюулгүй, системтэй өсөлт.</p>
+        <div class="hero-footer">
+          <span class="date"><i class="far fa-calendar"></i> 2026</span>
+          <span class="read-time"><i class="fas fa-location-dot"></i> Улаанбаатар</span>
+        </div>
+        <div class="hero-actions" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="events.html"><i class="fas fa-calendar-check"></i> Эвент үзэх</a>
+          <a class="btn btn-outline" href="about.html"><i class="fas fa-circle-info"></i> Клубийн тухай</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</header>
+
+<main class="container layout">
+  <section class="content">
+
+    <!-- Upcoming events -->
+    <div class="section-title">
+      <h2><i class="fas fa-calendar-check"></i> Дараагийн эвентүүд</h2>
+      <div class="filter-options" role="group" aria-label="event filters">
+        <button class="filter-btn active" type="button">Бүгд</button>
+        <button class="filter-btn" type="button">Training</button>
+        <button class="filter-btn" type="button">Jam</button>
+        <button class="filter-btn" type="button">Showcase</button>
+      </div>
+    </div>
+
+    <div class="articles-grid">
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Street Jam">
+          <span class="card-tag warning">UPCOMING</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><span class="date">2026-03-07</span> · <span><i class="fas fa-map-marker-alt"></i> Сүхбаатарын талбай</span></div>
+          <h3><a href="events.html#event-street-jam">Street Jam: Skate/Scooter</a></h3>
+          <p>Нээлттэй jam. Beginner-friendly формат, safety briefing, community meetup.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html#event-street-jam">Дэлгэрэнгүй <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1520975682031-a3ca1f7d9a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BMX Clinic">
+          <span class="card-tag info">TRAINING</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><span class="date">2026-03-16</span> · <span><i class="fas fa-map-marker-alt"></i> Park spot</span></div>
+          <h3><a href="events.html#event-bmx-clinic">BMX Clinic: Skills + Safety</a></h3>
+          <p>Warm-up protocol, суурь техник, хамгаалалтын зөв дадал, гэмтлийн эрсдэлийг бууруулах.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html#event-bmx-clinic">Дэлгэрэнгүй <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Drift Showcase">
+          <span class="card-tag warning">UPCOMING</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><span class="date">2026-04-05</span> · <span><i class="fas fa-map-marker-alt"></i> Track/Autodrome</span></div>
+          <h3><a href="events.html#event-drift-showcase">Drift Showcase</a></h3>
+          <p>Track etiquette, marshal заавар, үзэгчдийн аюулгүй бүс. Техникийн шалгалттай.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html#event-drift-showcase">Дэлгэрэнгүй <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Categories -->
+    <div class="section-title" id="categories" style="margin-top:28px">
+      <h2><i class="fas fa-layer-group"></i> Спортын ангилал</h2>
+      <div class="filter-options" role="group" aria-label="sport filters">
+        <button class="filter-btn active" type="button">Бүгд</button>
+        <button class="filter-btn" type="button">Wheel</button>
+        <button class="filter-btn" type="button">Street</button>
+        <button class="filter-btn" type="button">Track</button>
+      </div>
+    </div>
+
+    <div class="articles-grid">
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Drift">
+          <span class="card-tag danger">DRIFT</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="about.html">Drift / Supercar</a></h3>
+          <p>Track дээр дүрэмтэй, marshal-тай орчин. Safety zone, техник шалгалт, etiquette.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html">Эвентүүд <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1520975682031-a3ca1f7d9a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BMX">
+          <span class="card-tag info">BMX</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="about.html">BMX</a></h3>
+          <p>Progression системтэй: warm-up, үндсэн техник, landing mechanics, хамгаалалт.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html">Сургалт <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Skateboard">
+          <span class="card-tag warning">SKATE</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="about.html">Skate / Scooter</a></h3>
+          <p>Street jam, trick progressions, хамгаалалтын зөв дадал. Newcomer onboarding.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html">Jam <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1520975918794-232f8d8e67f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Parkour">
+          <span class="card-tag success">PARKOUR</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="about.html">Parkour</a></h3>
+          <p>Mobility + landing + progression. Хүч, уян хатан байдал, гэмтлээс сэргийлэлт.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html">Session <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Safety / Tools -->
+    <div class="section-title" id="tools" style="margin-top:28px">
+      <h2><i class="fas fa-helmet-safety"></i> Safety стандарт</h2>
+      <div class="filter-options" role="group" aria-label="safety filters">
+        <button class="filter-btn active" type="button">Товч</button>
+        <button class="filter-btn" type="button">Gear</button>
+        <button class="filter-btn" type="button">Warm-up</button>
+        <button class="filter-btn" type="button">Rules</button>
+      </div>
+    </div>
+
+    <div class="articles-grid">
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1520975860170-4cf3f5e73e55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Protective gear">
+          <span class="card-tag info">GEAR</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="about.html">Хамгаалалтын хэрэгсэл</a></h3>
+          <p>Helmet, pads, gloves. “Хэлбэр” биш, гэмтэл бууруулах бодит хамгаалалт.</p>
+          <div class="card-footer">
+            <a class="read-more" href="about.html">Дэлгэрэнгүй <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1517964108460-5f1f9f78f9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Warm up">
+          <span class="card-tag warning">WARM-UP</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="about.html">Warm-up протокол</a></h3>
+          <p>Joint prep + mobility + activation. Сайн warm-up бол хамгийн хямд даатгал.</p>
+          <div class="card-footer">
+            <a class="read-more" href="about.html">Дэлгэрэнгүй <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1552409900-1d7a6a0f59f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rules">
+          <span class="card-tag success">RULES</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="events.html">Эвентийн дүрэм</a></h3>
+          <p>Spotter, queue discipline, no-snake, safe zones. Дүрэмгүй бол эвент хийхгүй.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html">Эвент рүү <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Optional resources (keep existing cyber pages as placeholders) -->
+    <div class="section-title" style="margin-top:28px">
+      <h2><i class="fas fa-book"></i> Нийтлэл / Resource</h2>
+      <div class="filter-options" role="group" aria-label="resource filters">
+        <button class="filter-btn active" type="button">Бүгд</button>
+        <button class="filter-btn" type="button">Практик</button>
+        <button class="filter-btn" type="button">Зөвлөмж</button>
+      </div>
+    </div>
+
+    <div class="articles-grid" id="articles">
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Palo Alto Networks">
+          <span class="card-tag warning">ПРАКТИК</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><span class="date">2025-06-12</span></div>
+          <h3><a href="palo-alto.html">Palo Alto Networks нийлүүлэлтийн сүлжээгээр халдлага илэрчээ</a></h3>
+          <p>Placeholder нийтлэл (дараа нь солиход бэлэн card layout).</p>
+          <div class="card-footer">
+            <a class="read-more" href="palo-alto.html">Унших <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1581093458791-9d42d1e06655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CISA Iran">
+          <span class="card-tag danger">МЭДЭЭ</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><span class="date">2025-06-10</span></div>
+          <h3><a href="cisa-iran.html">CISA: Иранд холбогдох акторуудын довтолгоо эрс өсөж байна</a></h3>
+          <p>Placeholder нийтлэл (дараа нь extreme спортын safety/discipline контент болгож сольж болно).</p>
+          <div class="card-footer">
+            <a class="read-more" href="cisa-iran.html">Унших <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="MFA best practices">
+          <span class="card-tag info">ЗӨВЛӨМЖ</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><span class="date">2025-06-08</span></div>
+          <h3><a href="mfa-best.html">Нууц үг ба MFA: Байгууллагын хамгийн сайн практик</a></h3>
+          <p>Placeholder нийтлэл. Card дизайн, meta, CTA бүгд стандарт.</p>
+          <div class="card-footer">
+            <a class="read-more" href="mfa-best.html">Унших <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="pagination" aria-label="pagination">
+      <button class="btn btn-outline" type="button"><i class="fas fa-arrow-left"></i> Өмнөх</button>
+      <div class="page-numbers" aria-label="page numbers">
+        <div class="page active">1</div>
+        <div class="page">2</div>
+        <div class="page">3</div>
+      </div>
+      <button class="btn btn-outline" type="button">Дараах <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+  </section>
+
+  <aside class="sidebar">
+    <div class="widget">
+      <h4><i class="fas fa-layer-group"></i> Ангилал</h4>
+      <ul class="categories">
+        <li><a href="#categories"><i class="fas fa-car"></i> Drift / Supercar</a><span class="count">3</span></li>
+        <li><a href="#categories"><i class="fas fa-bicycle"></i> BMX</a><span class="count">3</span></li>
+        <li><a href="#categories"><i class="fas fa-skating"></i> Skate / Scooter</a><span class="count">4</span></li>
+        <li><a href="#categories"><i class="fas fa-person-running"></i> Parkour</a><span class="count">2</span></li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h4><i class="far fa-clock"></i> Дараагийн 3 эвент</h4>
+      <ul class="compact-list">
+        <li><a href="events.html#event-street-jam">Street Jam: Skate/Scooter</a><span class="date">03-07</span></li>
+        <li><a href="events.html#event-bmx-clinic">BMX Clinic: Skills + Safety</a><span class="date">03-16</span></li>
+        <li><a href="events.html#event-drift-showcase">Drift Showcase</a><span class="date">04-05</span></li>
+      </ul>
+    </div>
+
+    <div class="widget newsletter">
+      <h4><i class="far fa-newspaper"></i> Нэгдэх / Мэдэгдэл авах</h4>
+      <p>И-мэйл оруулаад шинэ эвент, сургалт, jam гарах бүрт мэдээлэл аваарай.</p>
+      <form id="newsletter-form">
+        <div class="input-group">
+          <input type="email" placeholder="И-мэйл" required>
+          <button type="submit" class="btn btn-primary" aria-label="subscribe"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-outline" href="about.html"><i class="fas fa-user-plus"></i> Клубт нэгдэх</a>
+        <a class="btn btn-outline" href="events.html"><i class="fas fa-ticket"></i> Эвент</a>
+      </div>
+    </div>
+
+    <div class="widget">
+      <h4><i class="fas fa-circle-info"></i> Safety Reminder</h4>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6">
+        Helmet + pads + warm-up. Эрүүл мэндээ эвдчихээд “hardcore” гэдэг үг хэлэх зав гарахгүй.
+      </p>
+    </div>
+
+    <div class="widget">
+      <h4><i class="fas fa-rss"></i> RSS</h4>
+      <a class="rss" href="#"><i class="fas fa-rss-square"></i> RSS feed</a>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <h3><i class="fas fa-bolt"></i> Extreme Youth</h3>
+      <p>Монголын экстрем спортын community. Дүрэмтэй, аюулгүй, тасралтгүй өсөлт.</p>
+      <div class="social-links">
+        <a href="#" aria-label="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Холбоос</h4>
+      <ul>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">Бидний тухай</a></li>
+        <li><a href="#tools">Safety стандарт</a></li>
+        <li><a href="#top">Дээш</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Холбоо</h4>
+      <p><i class="fas fa-envelope"></i> tmka1345@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +976 88190747</p>
+      <p><i class="fas fa-map-marker-alt"></i> Улаанбаатар, Монгол</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2026 Extreme Youth. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </div>
+</footer>
+
+</body>
+</html>

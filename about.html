@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Бидний тухай — Extreme Youth</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- About page extras (keeps style.css untouched) -->
+  <style>
+    .about-wrap{padding:40px 0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .about-block{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+    .about-block h2,.about-block h3{margin:0 0 12px}
+    .about-block p{margin:0 0 12px;color:var(--muted)}
+    .about-block p:last-child{margin-bottom:0}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .stat{background:#f1f5f9;border-radius:var(--radius);padding:16px}
+    .stat .num{font-weight:700;font-size:22px;color:var(--text)}
+    .stat .lbl{font-size:12px;color:var(--muted);margin-top:4px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:#f1f5f9;color:var(--text);border-radius:999px;padding:8px 12px;font-size:13px}
+    .pill i{color:var(--accent)}
+    .timeline{display:grid;gap:12px}
+    .t-item{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px;border:1px solid #e2e8f0;border-radius:var(--radius);background:#fff}
+    .t-item .t-date{font-weight:700;color:var(--accent)}
+    .t-item .t-title{margin:0;font-weight:600}
+    .t-item .t-desc{margin:4px 0 0;color:var(--muted);font-size:14px}
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .person{background:#fff;border:1px solid #e2e8f0;border-radius:var(--radius);padding:16px;display:flex;gap:12px;align-items:flex-start}
+    .avatar{width:44px;height:44px;border-radius:12px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;flex:0 0 auto}
+    .person h4{margin:0 0 4px;font-size:16px}
+    .person .role{margin:0 0 8px;color:var(--muted);font-size:13px}
+    .person .tags{display:flex;flex-wrap:wrap;gap:6px}
+    .tag-mini{font-size:12px;padding:4px 10px;border-radius:999px;background:#f1f5f9;color:var(--muted)}
+    .program{display:grid;gap:10px}
+    .slot{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid #e2e8f0;border-radius:var(--radius);background:#fff}
+    .slot .left{display:flex;gap:10px}
+    .slot .time{font-weight:700;color:var(--accent);min-width:72px}
+    .slot .title{margin:0;font-weight:600}
+    .slot .meta{margin:2px 0 0;color:var(--muted);font-size:13px}
+    details.faq{background:#fff;border:1px solid #e2e8f0;border-radius:var(--radius);padding:14px}
+    details.faq + details.faq{margin-top:10px}
+    details.faq summary{cursor:pointer;font-weight:600;list-style:none}
+    details.faq summary::-webkit-details-marker{display:none}
+    details.faq p{margin:10px 0 0;color:var(--muted);font-size:14px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .notice{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:var(--radius);padding:14px;font-size:14px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-grid input,.form-grid textarea,.form-grid select{
+      width:100%;padding:10px 12px;border-radius:var(--radius);border:1px solid #cbd5e1;font-size:14px;font-family:inherit
+    }
+    .form-grid textarea{grid-column:1/-1;min-height:120px;resize:vertical}
+    .form-actions{margin-top:12px}
+    .muted{color:var(--muted)}
+    @media (max-width:1000px){
+      .about-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .team-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:768px){
+      .team-grid{grid-template-columns:1fr}
+      .t-item{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-top">
+    <div class="brand"><a href="index.html"><i class="fas fa-bolt"></i> Extreme Youth</a></div>
+    <nav class="main-nav">
+      <a href="index.html"><i class="fas fa-home"></i> Нүүр</a>
+      <a href="index.html#categories"><i class="fas fa-folder"></i> Ангилал</a>
+      <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+      <a href="index.html#tools"><i class="fas fa-tools"></i> Өргөлт</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> Бидний тухай</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-container">
+        <input id="global-search" type="search" placeholder="Хайх..." aria-label="search">
+        <button class="search-btn" aria-label="search button"><i class="fas fa-search"></i></button>
+      </div>
+      <button id="menu-toggle" class="icon-btn" aria-label="menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+
+  <div class="container hero">
+    <article class="hero-article">
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Extreme Youth community">
+        <div class="overlay"></div>
+      </div>
+      <div class="hero-meta">
+        <span class="tag danger">COMMUNITY</span>
+        <h1><a href="#about">Extreme Youth гэж юу вэ?</a></h1>
+        <p class="lead">Drift, supercar, BMX, skateboard, scooter, parkour зэрэг экстрим спортуудыг нэг дор цогцлоож, “үзүүлбэр”-ийг “соёл” болгодог клуб.</p>
+        <div class="hero-footer">
+          <span class="date"><i class="far fa-clock"></i> 2025–2026</span>
+          <span><i class="fas fa-map-marker-alt"></i> Улаанбаатар</span>
+          <span><i class="fas fa-shield-alt"></i> Safety-first</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</header>
+
+<main class="container about-wrap" id="about">
+  <section class="about-grid">
+    <div class="about-block">
+      <h2><i class="fas fa-bullseye"></i> Эрхэм зорилго</h2>
+      <p>Экстрим спортоор сонирхогч, шинэхэн, ахисан түвшний залуусыг нэгтгэж аюулгүй, дүрэмтэй орчин бүрдүүлнэ. Сургалт, хамтарсан бэлтгэл, менторшип, эвент, тэмцээн, шоугоор дамжуулан ур чадварыг системтэй өсгөнө.</p>
+      <div class="pill-row" aria-label="values">
+        <span class="pill"><i class="fas fa-helmet-safety"></i> Аюулгүй байдал</span>
+        <span class="pill"><i class="fas fa-handshake"></i> Хамт олон</span>
+        <span class="pill"><i class="fas fa-clipboard-check"></i> Дүрэм ба хариуцлага</span>
+        <span class="pill"><i class="fas fa-chart-line"></i> Тасралтгүй хөгжил</span>
+        <span class="pill"><i class="fas fa-wand-magic-sparkles"></i> Бүтээлч хөдөлгөөн</span>
+      </div>
+    </div>
+
+    <div class="about-block">
+      <h2><i class="fas fa-eye"></i> Алсын хараа</h2>
+      <p>Extreme Youth нь Монголын экстрим спортын хамгийн хүчтэй community болж, drift, supercar, BMX, skateboard, scooter, parkour-ийн соёлыг аюулгүй, мэргэжлийн, олон улсын түвшинд хөгжүүлсэн жишиг клуб болно.</p>
+      <div class="stats" aria-label="highlights">
+        <div class="stat"><div class="num">6+</div><div class="lbl">Төрлийн спорт</div></div>
+        <div class="stat"><div class="num">12+</div><div class="lbl">Сар тутмын бэлтгэл</div></div>
+        <div class="stat"><div class="num">4+</div><div class="lbl">Том эвент / жил</div></div>
+        <div class="stat"><div class="num">1</div><div class="lbl">Нэг community</div></div>
+      </div>
+      <p class="muted" style="margin-top:12px">Эдгээр нь бүтэц тайлбарлах жишиг тоонууд. Бодит тоон мэдээллийг клубийн датагаар шинэчилнэ.</p>
+    </div>
+  </section>
+
+  <section style="margin-top:24px">
+    <div class="section-title">
+      <h2><i class="fas fa-layer-group"></i> Бид юу хийдэг вэ</h2>
+      <div class="filter-options" aria-hidden="true">
+        <button class="filter-btn active" type="button">Community</button>
+        <button class="filter-btn" type="button">Training</button>
+        <button class="filter-btn" type="button">Events</button>
+        <button class="filter-btn" type="button">Content</button>
+      </div>
+    </div>
+
+    <div class="articles-grid">
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1520975682031-a3ca1f7d9a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Training sessions">
+          <span class="card-tag info">TRAINING</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><i class="fas fa-dumbbell"></i> Суурь → Ахисан</div>
+          <h3>Сургалт ба менторшип</h3>
+          <p>Warm-up, safety, progression, техник засалт, видео анализ, дадлын алдааг засах системтэй сургалт.</p>
+          <div class="card-footer">
+            <a class="read-more" href="#program">Хөтөлбөр харах <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Street jam">
+          <span class="card-tag warning">EVENTS</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><i class="far fa-calendar"></i> Street jam · Demo day</div>
+          <h3>Эвент ба тэмцээн</h3>
+          <p>Street jam, demo day, drift showcase, multi-sport showcase зэрэг форматаар тогтмол эвент зохион байгуулна.</p>
+          <div class="card-footer">
+            <a class="read-more" href="events.html">Events руу орох <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Safety briefing">
+          <span class="card-tag success">SAFETY</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><i class="fas fa-helmet-safety"></i> Rulebook</div>
+          <h3>Аюулгүй байдлын стандарт</h3>
+          <p>Helmets/pads, spotter, орчны шалгалт, дүрмийн мөрдөлт, эрсдэлийн бууруулалт. “Аюулгүй байдалгүй бол спортууд байхгүй.”</p>
+          <div class="card-footer">
+            <a class="read-more" href="#safety">Дэлгэрэнгүй <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Content creation">
+          <span class="card-tag info">CONTENT</span>
+        </div>
+        <div class="card-body">
+          <div class="meta"><i class="fas fa-video"></i> Photo · Video</div>
+          <h3>Контент ба соёл</h3>
+          <p>Тамирчдын ахиц, эвентүүд, backstage, зөв техник, зөв дадлыг контентоор дамжуулж түгээнэ.</p>
+          <div class="card-footer">
+            <a class="read-more" href="#media">Контент бодлого <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section style="margin-top:24px">
+    <div class="about-block">
+      <h2><i class="fas fa-road"></i> Түүх ба хөгжлийн замнал</h2>
+      <p class="muted">Хураангуй timeline. Дотоод баримтаар албан мэдээлэл нэмэхэд бэлэн бүтэц.</p>
+      <div class="timeline" aria-label="timeline">
+        <div class="t-item">
+          <div class="t-date">2025 Q4</div>
+          <div>
+            <p class="t-title">Community үндэс</p>
+            <p class="t-desc">Анхны цөм бүрдэж, сургалтын формат, safety checklist, дүрмийн draft гарсан.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">2026 Q1</div>
+          <div>
+            <p class="t-title">Тогтмол бэлтгэл</p>
+            <p class="t-desc">BMX/Skate/Parkour-ийн тогтмол session, beginner onboarding эхэлсэн.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">2026 Q2</div>
+          <div>
+            <p class="t-title">Эвентүүдийг стандартчилах</p>
+            <p class="t-desc">Events page, бүртгэл, marshal, venue checklist, emergency plan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="team">
+    <div class="about-block">
+      <h2><i class="fas fa-users"></i> Баг</h2>
+      <p class="muted">Албан ёсны багийн бүтэц нэмэгдэхэд бэлэн layout.</p>
+      <div class="team-grid" aria-label="team members">
+        <div class="person">
+          <div class="avatar"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <h4>С. Тулга-Эрдэнэ</h4>
+            <p class="role">Тэргүүн</p>
+            <div class="tags">
+              <span class="tag-mini">Leadership</span>
+              <span class="tag-mini">Events</span>
+              <span class="tag-mini">Safety</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="person">
+          <div class="avatar"><i class="fas fa-helmet-safety"></i></div>
+          <div>
+            <h4>Safety Lead</h4>
+            <p class="role">Дүрэм, хамгаалалт, marshal</p>
+            <div class="tags">
+              <span class="tag-mini">Checklist</span>
+              <span class="tag-mini">Briefing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="person">
+          <div class="avatar"><i class="fas fa-video"></i></div>
+          <div>
+            <h4>Media Lead</h4>
+            <p class="role">Фото/Видео, контент</p>
+            <div class="tags">
+              <span class="tag-mini">Reels</span>
+              <span class="tag-mini">Highlights</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice" style="margin-top:16px">
+        <strong>Товч дүрэм:</strong> Багийн үүрэг нь “гоё харагдах” гэж биш, хүн гэмтэхгүй, эвент нурж унахгүй, ахиц бодитоор гарах гэж байдаг.
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="program">
+    <div class="about-block">
+      <h2><i class="fas fa-calendar-week"></i> Жишиг сургалтын хөтөлбөр</h2>
+      <p class="muted">Энэ бол demo бүтэц. Спорт бүр дээр цаг, байрлал, багш/менторын нэрийг нэмээд шууд ашиглана.</p>
+
+      <div class="program" aria-label="weekly program">
+        <div class="slot">
+          <div class="left">
+            <div class="time">Mon</div>
+            <div>
+              <p class="title">Mobility + Injury prevention</p>
+              <p class="meta">Warm-up protocol · Landing mechanics · Stretching</p>
+            </div>
+          </div>
+          <span class="date">18:30</span>
+        </div>
+
+        <div class="slot">
+          <div class="left">
+            <div class="time">Wed</div>
+            <div>
+              <p class="title">BMX / Skate basic session</p>
+              <p class="meta">Progression · Spotter · Video feedback</p>
+            </div>
+          </div>
+          <span class="date">19:00</span>
+        </div>
+
+        <div class="slot">
+          <div class="left">
+            <div class="time">Sat</div>
+            <div>
+              <p class="title">Parkour open training</p>
+              <p class="meta">Flow · Precision · Safe landings</p>
+            </div>
+          </div>
+          <span class="date">14:00</span>
+        </div>
+      </div>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="events.html"><i class="fas fa-calendar-alt"></i> Events харах</a>
+        <a class="btn btn-outline" href="#join"><i class="fas fa-user-plus"></i> Нэгдэх</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="safety">
+    <div class="about-block">
+      <h2><i class="fas fa-helmet-safety"></i> Safety-first стандарт</h2>
+      <p>Энд “хааяа өмсдөг” хамгаалалт гэж байхгүй. Стандарт гэдэг нь тогтвортой дадал гэсэн үг.</p>
+      <div class="about-grid" style="margin-top:12px">
+        <div class="about-block" style="box-shadow:none;border:1px solid #e2e8f0">
+          <h3><i class="fas fa-check"></i> Заавал хийх</h3>
+          <p class="muted">Warm-up, хамгаалалтын хэрэгсэл, орчны шалгалт, spotter/mentor, дүрмийн мөрдөлт.</p>
+          <div class="pill-row">
+            <span class="pill"><i class="fas fa-helmet-safety"></i> Helmet</span>
+            <span class="pill"><i class="fas fa-hand"></i> Wrist/Elbow</span>
+            <span class="pill"><i class="fas fa-shoe-prints"></i> Knee</span>
+            <span class="pill"><i class="fas fa-people-arrows"></i> Spotter</span>
+          </div>
+        </div>
+        <div class="about-block" style="box-shadow:none;border:1px solid #e2e8f0">
+          <h3><i class="fas fa-ban"></i> Хориглох</h3>
+          <p class="muted">Согтуу/мансуурсан үед бэлтгэл, зөвшөөрөлгүй risky trick, crowd-д ойр drift, хамгаалалтгүй drop/rail.</p>
+          <div class="pill-row">
+            <span class="pill"><i class="fas fa-wine-bottle"></i> Substance</span>
+            <span class="pill"><i class="fas fa-triangle-exclamation"></i> Unsafe trick</span>
+            <span class="pill"><i class="fas fa-car-burst"></i> Crowd drift</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="media">
+    <div class="about-block">
+      <h2><i class="fas fa-video"></i> Контент бодлого</h2>
+      <p>Контент бол зөвхөн hype биш. Техник, safety, progression, community-г харуулах хэрэгсэл.</p>
+      <ul>
+        <li><strong>Хүн төвтэй:</strong> Хэн нэгнийг “гоё харагдуулах” гэж эрсдэл рүү түлхэхгүй.</li>
+        <li><strong>Зөв дадал:</strong> Warm-up, хамгаалалт, spotter-ыг норм болгоно.</li>
+        <li><strong>Хувийн орон зай:</strong> Зөвшөөрөлгүй close-up, хүүхдийн нүүр, дугаар зэрэг мэдээлэл нийтлэхгүй.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="join">
+    <div class="about-block">
+      <h2><i class="fas fa-user-plus"></i> Нэгдэх заавар</h2>
+      <p class="muted">Хүний амьдралын хамгийн хэцүү хэсэг нь “эхлэх”. Харин энд тэрийг нь хялбарчилсан.</p>
+
+      <div class="about-grid" style="margin-top:12px">
+        <div class="about-block" style="box-shadow:none;border:1px solid #e2e8f0">
+          <h3><i class="fas fa-1"></i> Спортоо сонго</h3>
+          <p>Skate / BMX / Scooter / Parkour / Drift гэх мэт.</p>
+        </div>
+        <div class="about-block" style="box-shadow:none;border:1px solid #e2e8f0">
+          <h3><i class="fas fa-2"></i> Түвшнээ тодорхойл</h3>
+          <p>Beginner бол бүр сайн. Эхлэх хүн олон байх тусам community амьд.</p>
+        </div>
+        <div class="about-block" style="box-shadow:none;border:1px solid #e2e8f0">
+          <h3><i class="fas fa-3"></i> Safety checklist</h3>
+          <p>Helmet/pads, зөв гутал, ус, warm-up хийх сэтгэл зүй.</p>
+        </div>
+        <div class="about-block" style="box-shadow:none;border:1px solid #e2e8f0">
+          <h3><i class="fas fa-4"></i> Session дээр ир</h3>
+          <p>Events хуудсаар цаг, байрлал, дүрмийг шалгаад ирнэ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="faq">
+    <div class="about-block">
+      <h2><i class="fas fa-circle-question"></i> Түгээмэл асуулт</h2>
+
+      <details class="faq">
+        <summary>Beginner байхад орж болох уу?</summary>
+        <p>Тийм. Beginner-үүдэд зориулсан warm-up, safety, суурь техник, progression байдаг. Энд “ичих” гэдэг зүйл хэт тансаг хэрэглээ.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Хамгаалалтын хэрэгсэлгүй бол яах вэ?</summary>
+        <p>Боломжит хувилбараар (түр зуурын хамгаалалт/зөвлөгөө/түрээлэлт) зохицуулж болно, гэхдээ хамгаалалтгүй risky зүйл хийхгүй.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Дүрэм зөрчвөл?</summary>
+        <p>Эхлээд briefing, дараа нь stop. Дахин давтагдвал session/эвентээс хасна. Энэ нь “драм” биш, safety-ийн протокол.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Хэзээ, хаана эвентүүд болдог вэ?</summary>
+        <p>Events хуудсанд (events.html) шинэчилж байршуулна. Venue, цаг, safety requirement-үүд тэнд байна.</p>
+      </details>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="contact">
+    <div class="about-block">
+      <h2><i class="fas fa-envelope"></i> Холбоо барих</h2>
+      <p class="muted">Доорх хэлбэр нь front-end л. Back-end байхгүй бол илгээх товч нь ердөө гоё товч хэвээрээ байна.</p>
+
+      <div class="contact-details" style="margin:12px 0 16px">
+        <p><i class="fas fa-envelope"></i> b210970090@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +976 88190747</p>
+        <p><i class="fas fa-map-marker-alt"></i> Улаанбаатар, Монгол</p>
+      </div>
+
+      <form>
+        <div class="form-grid">
+          <input type="text" name="name" placeholder="Нэр" required>
+          <input type="email" name="email" placeholder="И-мэйл" required>
+          <select name="topic" aria-label="topic">
+            <option value="join">Клубт нэгдэх</option>
+            <option value="event">Эвент/хамтын ажиллагаа</option>
+            <option value="media">Контент/зураг авах</option>
+            <option value="other">Бусад</option>
+          </select>
+          <input type="text" name="phone" placeholder="Утас (заавал биш)">
+          <textarea name="message" placeholder="Мессеж" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i> Илгээх</button>
+          <span class="muted" style="margin-left:10px;font-size:13px">Backend нэмэхэд энэ form шууд ажиллана.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="privacy">
+    <div class="about-block">
+      <h2><i class="fas fa-user-shield"></i> Нууцлалын бодлого</h2>
+      <p>Энд бүртгэл, эвент бүртгэл, зураг/видео зөвшөөрөл, хүүхдийн мэдээлэл, холбоо барих мэдээлэл хадгалалт зэрэг бодлогыг байршуулна. Минимум зарчим: шаардлагагүй мэдээлэл цуглуулахгүй, зөвшөөрөлгүй нийтлэхгүй, гуравдагч этгээдэд худалдахгүй.</p>
+    </div>
+  </section>
+
+  <section style="margin-top:24px" id="terms">
+    <div class="about-block">
+      <h2><i class="fas fa-file-contract"></i> Үйлчилгээний нөхцөл</h2>
+      <p>Энд клубийн дүрэм, safety шаардлага, эвентийн нөхцөл, хариуцлагын хүрээ, насны ангилал, venue-д мөрдөх журам зэргийг байршуулна. “Дүрэмгүй экстрем” гэдэг нь ердөө л “гэнэтийн эмнэлэг” гэсэн үг.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <h3><i class="fas fa-shield-alt"></i> Extreme Youth Community</h3>
+      <p>Экстрим спортыг зөв орчинтой, аюулгүй, дүрэмтэй, тасралтгүй хөгжлийн соёл болгох community.</p>
+      <div class="social-links">
+        <a href="#" aria-label="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Холбоос</h4>
+      <ul>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="#team">Баг</a></li>
+        <li><a href="#privacy">Нууцлалын бодлого</a></li>
+        <li><a href="#terms">Үйлчилгээний нөхцөл</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Холбоо</h4>
+      <p><i class="fas fa-envelope"></i> b210970090@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +976 88190747</p>
+      <p><i class="fas fa-map-marker-alt"></i> Улаанбаатар, Монгол</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2026 Extreme Youth Community. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

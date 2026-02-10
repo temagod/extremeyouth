@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>STREET CHAMP Турник тэмцээн</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-top">
+    <div class="brand"><a href="index.html"><i class="fas fa-bolt"></i> Extreme Youth</a></div>
+    <nav class="main-nav">
+      <a href="index.html"><i class="fas fa-home"></i> Нүүр</a>
+      <a href="#categories"><i class="fas fa-folder"></i> Ангилал</a>
+      <a href="#research"><i class="fas fa-calendar-check"></i> Events</a>
+      <a href="#tools"><i class="fas fa-tools"></i> Өргөлт</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> Бидний тухай</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-container">
+        <input id="global-search" type="search" placeholder="Мэдээ хайх..." aria-label="search">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+      <button id="menu-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main class="container single-article">
+  <article class="post">
+    <h1>STREET CHAMP Турник тэмцээн</h1>
+    <div class="post-meta">2025-06-15 · <span class="tag danger">ХАЛДЛАГА</span> · <i class="far fa-eye"></i> 284 уншигдсан</div>
+    <img class="post-hero" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Cloudflare DDoS халдлага">
+
+    <div class="post-content">
+      <p>Аюулгүй байдлын компани Cloudflare сүүлийн үеийн хамгийн том DDoS (тархалттай үйлчилгээг тасалдуулах) халдлагын нэгийг хаасан тухайгаа мэдэгдлээ. Энэхүү халдлага нь секундэд 11.5 терабит хурдтай байсан бөгөөд өмнөх дээд амжилтаас 15%-иар илүү юм.</p>
+
+      <h2>Халдлагын мэдрэгдсэн нөлөө</h2>
+      <p>Энэхүү DDoS халдлага нь богино хугацаанд өндөр эрчмийн даралт үүсгэсэн боловч Cloudflare-ийн автомат хамгаалалтын системүүд халдлагыг илрүүлж, хааж чадсан. Халдлага нь секундэд 220 сая хүсэлт илгээсэн бөгөөд үүний дийлэнх хэсэг нь хятад, америк, герман зэрэг орнуудаас гаралтай байв.</p>
+
+      <div class="info-box">
+        <h3><i class="fas fa-info-circle"></i> DDoS халдлага гэж юу вэ?</h3>
+        <p>DDoS (Distributed Denial of Service) нь олон компьютерээс нэгэн зэрэг хүсэлт илгээж, сүлжээний үйлчилгээг дүүргэж, хэвийн ажиллагааг нь тасалдуулах зорилготой кибер халдлага юм.</p>
+      </div>
+
+      <h2>Халдлагын гарал үүсэл ба арга</h2>
+      <p>Cloudflare-ийн мэдэгдсэнээр, энэхүү халдлага нь Mirai ботнет сүлжээг ашиглан хийгдсэн. Mirai нь интернэтэд холбогдсон төхөөрөмжүүдийг (камер, router гэх мэт) зориудаар эзэлж, DDoS халдлага хийхэд ашигладаг хортой програм хангамж юм.</p>
+
+      <p>Халдагчид Memcached amplification гэгдэх аргыг ашигласан бөгөөд энэ нь халдлагын хэмжээг олон дахин нэмэгдүүлдэг. Энэ аргаар халдагчид бага хэмжээний хүсэлт илгээсэн ч Memcached серверүүд нь хариу үйлдэл болгон асар их хэмжээний өгөгдөл илгээдэг.</p>
+
+      <h2>Cloudflare-ийн хариу арга хэмжээ</h2>
+      <p>Cloudflare компани халдлагыг дараах аргаар амжилттай хаасан:</p>
+      
+      <ul>
+        <li><strong>Автомат хамгаалалтын систем:</strong> Anycast сүлжээг ашиглан халдлагын ачааллыг дэлхийн өнцөг булан бүрт байрлах дата төвүүдэд тараасан</li>
+        <li><strong>Rate limiting:</strong> IP хаяг бүрээс ирж буй хүсэлтийн тоог хязгаарласан</li>
+        <li><strong>Challenge механизм:</strong> Сайтаас ирж буй хүсэлтүүдэд CAPTCHA сорил тавьж, хүний үйл ажиллагааг шалгасан</li>
+        <li><strong>IP хаяг шүүлт:</strong> Халдлагын эх үүсвэр болсон IP хаягуудыг хориглосон</li>
+      </ul>
+
+      <h2>Байгууллагуудад зориулсан зөвлөмж</h2>
+      <p>DDoS халдлагын эрсдэлээс хамгаалахын тулд дараах арга хэмжээг авахыг зөвлөж байна:</p>
+      
+      <ol>
+        <li><strong>DDoS хамгаалалтын үйлчилгээ ашиглах:</strong> Cloudflare, Akamai, AWS Shield зэрэг DDoS хамгаалалтын үйлчилгээг ашиглах</li>
+        <li><strong>Сүлжээний архитектур сайжруулах:</strong> Сүлжээгээ өргөн зурвасын чанартай болгох, дата төвүүдийг тараах</li>
+        <li><strong>Хяналтын систем байгуулах:</strong> Сүлжээний ачаалал, хүсэлтийн хэв маягийг байнга хянах</li>
+        <li><strong>Гэмтэл тохиолдлын хариу арга хэмжээний төлөвлөгөөтэй байх:</strong> DDoS халдлага тохиолдсон үед хэрхэн ажиллах тодорхой төлөвлөгөөтэй байх</li>
+        <li><strong>Ажилтнуудад сургалт явуулах:</strong> DDoS халдлагын шинж тэмдэг, хариу арга хэмжээний талаар ажилтнуудад сургалт явуулах</li>
+      </ol>
+
+      <div class="quote-box">
+        <p>"DDoS халдлагууд улам бүр нарийн төвөгтэй болж, томоохон хэмжээтэй болж байна. Бид байгууллагуудад DDoS хамгаалалтын шийдлүүдийг хэрэгжүүлэх, гэмтэл тохиолдлын хариу арга хэмжээний төлөвлөгөөтэй байхыг зөвлөж байна."</p>
+        <cite>- Cloudflare-ийн Аюулгүй Байдлын Шинжээч</cite>
+      </div>
+
+      <h2>Дүгнэлт</h2>
+      <p>Cloudflare-ийн энэхүү амжилт нь орчин үеийн DDoS халдлагуудтай тэмцэхэд идэвхтэй хамгаалалтын стратегийн ач холбогдлыг харуулж байна. Халдлагууд улам бүр нарийн төвөгтэй, том хэмжээтэй болж байгаа тул байгууллагууд DDoS хамгаалалтын шийдлүүдийг хэрэгжүүлэх, гэмтэл тохиолдлын хариу арга хэмжээний төлөвлөгөөтэй байх нь чухал юм.</p>
+
+      <p>Цаашид DDoS халдлагууд улам бүр автоматжуулж, AI технологи ашиглах болно гэж үзэж байна. Тиймээс байгууллагууд хамгаалалтын системээ байнга шинэчлэх, халдлагын шинэ хэлбэрүүдэд бэлэн байх шаардлагатай.</p>
+    </div>
+
+    <div class="post-tags">
+      <strong>Түгээмэл:</strong> <a href="#">Cloudflare</a>, <a href="#">DDoS</a>, <a href="#">Халдлага</a>, <a href="#">Сүлжээний аюулгүй байдал</a>, <a href="#">Mirai</a>
+    </div>
+
+    <div class="post-share">
+      <h3>Нийтлэл хуваалцах:</h3>
+      <div class="share-buttons">
+        <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="#" class="share-btn telegram"><i class="fab fa-telegram"></i> Telegram</a>
+      </div>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="widget">
+      <h4><i class="far fa-clock"></i> Хамгийн сүүлд</h4>
+      <ul class="compact-list">
+        <li><a href="cisa-iran.html">CISA: Иранд холбогдох акторуудын довтолгоо эрс өсөж байна</a><span class="date">2 цаг</span></li>
+        <li><a href="palo-alto.html">Palo Alto Networks нийлүүлэлтийн сүлжээгээр халдлага илэрчээ</a><span class="date">1 өдөр</span></li>
+        <li><a href="mfa-best.html">Нууц үг ба MFA: Байгууллагын хамгийн сайн практик</a><span class="date">2 өдөр</span></li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h4><i class="fas fa-chart-line"></i> Хамгийн их уншигдсан</h4>
+      <ol class="popular">
+        <li><a href="article.html">APT бүлэглэл: шинжлэх ухаан</a></li>
+        <li><a href="article.html">Cloud misconfigurations</a></li>
+        <li><a href="article.html">Хакеруудын шинэ арга</a></li>
+      </ol>
+    </div>
+
+    <div class="widget newsletter">
+      <h4><i class="far fa-newspaper"></i> Мэдээний захиалга</h4>
+      <p>И-мэйл оруулж хамгийн сүүлийн мэдээг шууд аваарай.</p>
+      <form id="newsletter-form">
+        <div class="input-group">
+          <input type="email" placeholder="И-мэйл" required>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+    </div>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <h3><i class="fas fa-bolt"></i> Extreme youth Community</h3>
+      <p>Экстрим спортыг зөв орчинтой, аюулгүй, дүрэмтэй, тасралтгүй хөгжлийн соёл болгох community.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Холбоос</h4>
+      <ul>
+        <li><a href="#about">Манай тухай</a></li>
+        <li><a href="#contact">Холбоо барих</a></li>
+        <li><a href="#privacy">Нууцлалын бодлого</a></li>
+        <li><a href="#terms">Үйлчилгээний нөхцөл</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Холбоо</h4>
+      <p><i class="fas fa-envelope"></i> b210970090@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +976 88190747</p>
+      <p><i class="fas fa-map-marker-alt"></i> Улаанбаатар, Монгол</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2026 Extreme Youth Community. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
